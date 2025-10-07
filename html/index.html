@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Munim | Frontend Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+
+<body class="bg-slate-900 text-gray-100 transition-colors duration-500">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-gradient-to-r from-blue-600 via-indigo-700 to-purple-700 shadow-lg backdrop-blur-md">
+    <nav class="flex items-center justify-between px-8 py-4">
+      <h1 class="text-2xl font-bold text-white tracking-wide hover:scale-105 transition-transform duration-300">
+        Munim<span class="text-yellow-400">.</span>
+      </h1>
+      <ul class="hidden md:flex space-x-8 font-medium">
+        <li><a href="#about" class="hover:text-yellow-400">About</a></li>
+        <li><a href="#skills" class="hover:text-yellow-400">Skills</a></li>
+        <li><a href="#projects" class="hover:text-yellow-400">Projects</a></li>
+        <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+      </ul>
+      <button id="theme-toggle" class="text-2xl hover:scale-110 transition">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-28 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+    <h2 class="text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+      Hello, I’m <span class="text-yellow-400">Rahmatul</span>
+    </h2>
+    <p class="text-xl text-gray-300 max-w-2xl">
+      A passionate <span class="text-blue-400 font-semibold">Frontend Developer</span> crafting immersive, interactive, and visually stunning web experiences.
+    </p>
+    <div class="mt-8 space-x-4">
+      <a href="#projects" class="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">View Projects</a>
+      <a href="#contact" class="px-6 py-3 border border-blue-400 text-blue-400 rounded-full hover:bg-blue-400 hover:text-slate-900 transition">Contact</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24 px-6 bg-slate-800">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <img src="Rovi2.jpg" alt="Munim" class="rounded-full border-4 border-blue-400 mx-auto md:mx-0 shadow-lg" data-tilt data-tilt-max="15">
+      <div>
+        <h2 class="text-3xl font-bold text-blue-400 mb-4">About Me</h2>
+        <p class="text-gray-300 mb-4">
+          I’m <strong>Rahmatul Munim Rovi</strong>, a creative Frontend Developer who loves to mix design and technology. I focus on building visually appealing, responsive, and fast websites with clean code.
+        </p>
+        <p class="text-gray-400">
+          Currently exploring <span class="text-yellow-400">React</span>, <span class="text-yellow-400">Three.js</span>, and <span class="text-yellow-400">Tailwind CSS</span> to create immersive 3D web experiences.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-20 px-6 text-center bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+    <h2 class="text-3xl font-bold text-blue-400 mb-8">Skills</h2>
+    <div class="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
+      <span class="px-4 py-2 bg-slate-700 rounded-full hover:bg-blue-500 transition">HTML5</span>
+      <span class="px-4 py-2 bg-slate-700 rounded-full hover:bg-blue-500 transition">CSS3</span>
+      <span class="px-4 py-2 bg-slate-700 rounded-full hover:bg-blue-500 transition">JavaScript</span>
+      <span class="px-4 py-2 bg-slate-700 rounded-full hover:bg-blue-500 transition">React.js</span>
+      <span class="px-4 py-2 bg-slate-700 rounded-full hover:bg-blue-500 transition">Tailwind CSS</span>
+      <span class="px-4 py-2 bg-slate-700 rounded-full hover:bg-blue-500 transition">Git & GitHub</span>
+      <span class="px-4 py-2 bg-slate-700 rounded-full hover:bg-blue-500 transition">Python</span>
+      <span class="px-4 py-2 bg-slate-700 rounded-full hover:bg-blue-500 transition">DevOps Basics</span>
+      <span class="px-4 py-2 bg-slate-700 rounded-full hover:bg-blue-500 transition">C++</span>
+      <span class="px-4 py-2 bg-slate-700 rounded-full hover:bg-blue-500 transition">Java</span>
+      <span class="px-4 py-2 bg-slate-700 rounded-full hover:bg-blue-500 transition">SpringBoot</span>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-24 px-6 bg-slate-800 text-center">
+    <h2 class="text-3xl font-bold text-blue-400 mb-10">Projects</h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-slate-700 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition" data-tilt data-tilt-max="10">
+        <img src="img01.jpg" alt="" class="w-full h-48 object-cover" />
+        <div class="p-5 text-left">
+          <h3 class="text-xl font-semibold text-yellow-400">Hotel Management System</h3>
+          <p class="text-gray-300 mt-2 text-sm">Python + MySQL based CRUD hotel system for managing rooms, bookings, and billing.</p>
+          <a href="https://github.com/Rahmatul-Rovi/Hotel-Management-System" class="text-blue-400 hover:underline mt-3 inline-block">View on GitHub</a>
+        </div>
+      </div>
+      <div class="bg-slate-700 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition" data-tilt data-tilt-max="10">
+        <img src="billing-system-software-768.jpg" alt="" class="w-full h-48 object-cover" />
+        <div class="p-5 text-left">
+          <h3 class="text-xl font-semibold text-yellow-400">Billing System</h3>
+          <p class="text-gray-300 mt-2 text-sm">Tkinter-based app with invoice generation, tax calculation, and PDF export.</p>
+          <a href="https://github.com/Rahmatul-Rovi/Billing_System_Management" class="text-blue-400 hover:underline mt-3 inline-block">View on GitHub</a>
+        </div>
+      </div>
+       <div class="bg-slate-700 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition" data-tilt data-tilt-max="10">
+        <img src="pic.png" alt="" class="w-full h-48 object-cover" />
+        <div class="p-5 text-left">
+          <h3 class="text-xl font-semibold text-yellow-400">Portfolio Website</h3>
+          <p class="text-gray-300 mt-2 text-sm">3D, animated, responsive website made with HTML, Tailwind & JS.</p>
+          <a href="#" class="text-blue-400 hover:underline mt-3 inline-block">View on GitHub</a>
+        </div>
+      </div>
+      <div class="bg-slate-700 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition" data-tilt data-tilt-max="10">
+        <img src="pic1.jpg" alt="" class="w-full h-48 object-cover" />
+        <div class="p-5 text-left">
+          <h3 class="text-xl font-semibold text-yellow-400">Tax Management System</h3>
+          <p class="text-gray-300 mt-2 text-sm">3D, animated, responsive website made with HTML, Tailwind & JS.</p>
+          <a href="https://github.com/Rahmatul-Rovi/Tax_Management" class="text-blue-400 hover:underline mt-3 inline-block">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+ <section id="contact" class="py-24 px-6 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-center">
+  <h2 class="text-4xl font-extrabold text-blue-400 mb-6 animate-pulse">Contact Me</h2>
+  <p class="text-gray-300 mb-12 text-lg">Interested in working together? Let’s connect!</p>
+
+  <div class="flex justify-center gap-8">
+    <!-- Email Button -->
+    <a href="mailto:rahmatul.rovi@gmail.com" class="group relative px-6 py-4 bg-slate-700 rounded-xl text-xl text-blue-400 font-semibold shadow-lg transform transition duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:text-yellow-400">
+      📧 Email
+      <span class="absolute inset-0 rounded-xl border-2 border-blue-400 opacity-0 group-hover:opacity-100 transition duration-500"></span>
+    </a>
+
+    <!-- GitHub Button -->
+    <a href="https://github.com/Rahmatul-Rovi" target="_blank" class="group relative px-6 py-4 bg-slate-700 rounded-xl text-xl text-blue-400 font-semibold shadow-lg transform transition duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:text-yellow-400">
+      💻 GitHub
+      <span class="absolute inset-0 rounded-xl border-2 border-blue-400 opacity-0 group-hover:opacity-100 transition duration-500"></span>
+    </a>
+
+    <!-- LinkedIn Button -->
+    <a href="#" class="group relative px-6 py-4 bg-slate-700 rounded-xl text-xl text-blue-400 font-semibold shadow-lg transform transition duration-500 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:text-yellow-400">
+      💼 LinkedIn
+      <span class="absolute inset-0 rounded-xl border-2 border-blue-400 opacity-0 group-hover:opacity-100 transition duration-500"></span>
+    </a>
+  </div>
+</section>
+
+
+  <footer class="text-center py-6 bg-slate-800 text-gray-400">
+  © 2025 Rahmatul Munim Rovi | Designed & Developed with Tailwind CSS
+  </footer>
+
+  <script>
+    // Enable 3D tilt
+    VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+      max: 15,
+      speed: 500,
+      glare: true,
+      "max-glare": 0.4
+    });
+
+    // Scroll animation
+    ScrollReveal().reveal("section", {
+      delay: 100,
+      distance: "50px",
+      duration: 800,
+      easing: "ease-out",
+      origin: "bottom",
+      interval: 200
+    });
+
+    // Theme Toggle
+    const toggle = document.getElementById("theme-toggle");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("bg-white");
+      document.body.classList.toggle("text-gray-900");
+      if (toggle.textContent === "🌙") toggle.textContent = "☀️";
+      else toggle.textContent = "🌙";
+    });
+  </script>
+</body>
+</html>
