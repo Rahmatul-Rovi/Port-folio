@@ -7,6 +7,20 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .animated-bg {
+    background: linear-gradient(-45deg, #0f172a, #1e3a8a, #0f766e, #7e22ce);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+  }
+</style>
+
 </head>
 
 <body class="bg-slate-900 text-gray-100 transition-colors duration-500">
@@ -15,7 +29,7 @@
   <header class="fixed top-0 w-full z-50 bg-gradient-to-r from-blue-600 via-indigo-700 to-purple-700 shadow-lg backdrop-blur-md">
     <nav class="flex items-center justify-between px-8 py-4">
       <h1 class="text-2xl font-bold text-white tracking-wide hover:scale-105 transition-transform duration-300">
-        Munim<span class="text-yellow-400">.</span>
+        Rahmatul-Rovi<span class="text-yellow-400">.</span>
       </h1>
       <ul class="hidden md:flex space-x-8 font-medium">
         <li><a href="#about" class="hover:text-yellow-400">About</a></li>
@@ -28,7 +42,9 @@
   </header>
 
   <!-- Hero -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-28 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-28 animated-bg">
+
+  <div class="transform transition-transform duration-700 hover:rotate-x-6 hover:rotate-y-6 hover:scale-105 bg-slate-900/60 backdrop-blur-md p-10 rounded-2xl shadow-2xl border border-slate-700">
     <h2 class="text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
       Hello, I’m <span class="text-yellow-400">Rahmatul</span>
     </h2>
@@ -36,21 +52,21 @@
       A passionate <span class="text-blue-400 font-semibold">Frontend Developer</span> crafting immersive, interactive, and visually stunning web experiences.
     </p>
     <div class="mt-8 space-x-4">
-      <a href="#projects" class="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition">View Projects</a>
-      <a href="#contact" class="px-6 py-3 border border-blue-400 text-blue-400 rounded-full hover:bg-blue-400 hover:text-slate-900 transition">Contact</a>
+      <a href="#projects" class="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition transform hover:-translate-y-1 hover:shadow-lg">View Projects</a>
+      <a href="#contact" class="px-6 py-3 border border-blue-400 text-blue-400 rounded-full hover:bg-blue-400 hover:text-slate-900 transition transform hover:-translate-y-1 hover:shadow-lg">Contact</a>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- About -->
   <section id="about" class="py-24 px-6 bg-slate-800">
     <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
       <img src="Rovi2.jpg" alt="Munim" class="rounded-full border-4 border-blue-400 mx-auto md:mx-0 shadow-lg" data-tilt data-tilt-max="15">
       <div>
-        <h2 class="text-3xl font-bold text-blue-400 mb-4">About Me</h2>
-        <p class="text-gray-300 mb-4">
-          I’m <strong>Rahmatul Munim Rovi</strong>, a creative Frontend Developer who loves to mix design and technology. I focus on building visually appealing, responsive, and fast websites with clean code.
-        </p>
-        <p class="text-gray-400">
+         <h2 class="text-4xl font-extrabold text-blue-400 mb-6 animate-pulse">About Me</h2>
+       <p id="typewriter" class="text-xl text-gray-300 max-w-2xl"></p>
+
+        <p class="text-gray-400 text-lg">
           Currently exploring <span class="text-yellow-400">React</span>, <span class="text-yellow-400">Three.js</span>, and <span class="text-yellow-400">Tailwind CSS</span> to create immersive 3D web experiences.
         </p>
       </div>
@@ -59,7 +75,7 @@
 
   <!-- Skills -->
   <section id="skills" class="py-20 px-6 text-center bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-    <h2 class="text-3xl font-bold text-blue-400 mb-8">Skills</h2>
+     <h2 class="text-4xl font-extrabold text-blue-400 mb-6 animate-pulse">Skills</h2>
     <div class="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
       <span class="px-4 py-2 bg-slate-700 rounded-full hover:bg-blue-500 transition">HTML5</span>
       <span class="px-4 py-2 bg-slate-700 rounded-full hover:bg-blue-500 transition">CSS3</span>
@@ -77,13 +93,13 @@
 
   <!-- Projects -->
   <section id="projects" class="py-24 px-6 bg-slate-800 text-center">
-    <h2 class="text-3xl font-bold text-blue-400 mb-10">Projects</h2>
+     <h2 class="text-4xl font-extrabold text-blue-400 mb-6 animate-pulse">Projects</h2>
     <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <div class="bg-slate-700 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition" data-tilt data-tilt-max="10">
         <img src="img01.jpg" alt="" class="w-full h-48 object-cover" />
         <div class="p-5 text-left">
           <h3 class="text-xl font-semibold text-yellow-400">Hotel Management System</h3>
-          <p class="text-gray-300 mt-2 text-sm">Python + MySQL based CRUD hotel system for managing rooms, bookings, and billing.</p>
+          <p class="text-gray-300 mt-2 text-mid">Python + MySQL based CRUD hotel system for managing rooms, bookings, and billing.</p>
           <a href="https://github.com/Rahmatul-Rovi/Hotel-Management-System" class="text-blue-400 hover:underline mt-3 inline-block">View on GitHub</a>
         </div>
       </div>
@@ -91,7 +107,7 @@
         <img src="billing-system-software-768.jpg" alt="" class="w-full h-48 object-cover" />
         <div class="p-5 text-left">
           <h3 class="text-xl font-semibold text-yellow-400">Billing System</h3>
-          <p class="text-gray-300 mt-2 text-sm">Tkinter-based app with invoice generation, tax calculation, and PDF export.</p>
+          <p class="text-gray-300 mt-2 text-mid">Tkinter-based app with invoice generation, tax calculation, and PDF export.</p>
           <a href="https://github.com/Rahmatul-Rovi/Billing_System_Management" class="text-blue-400 hover:underline mt-3 inline-block">View on GitHub</a>
         </div>
       </div>
@@ -99,7 +115,7 @@
         <img src="pic.png" alt="" class="w-full h-48 object-cover" />
         <div class="p-5 text-left">
           <h3 class="text-xl font-semibold text-yellow-400">Portfolio Website</h3>
-          <p class="text-gray-300 mt-2 text-sm">3D, animated, responsive website made with HTML, Tailwind & JS.</p>
+          <p class="text-gray-300 mt-2 text-mid">3D, animated, responsive website made with HTML, Tailwind & JS.</p>
           <a href="#" class="text-blue-400 hover:underline mt-3 inline-block">View on GitHub</a>
         </div>
       </div>
@@ -107,7 +123,7 @@
         <img src="pic1.jpg" alt="" class="w-full h-48 object-cover" />
         <div class="p-5 text-left">
           <h3 class="text-xl font-semibold text-yellow-400">Tax Management System</h3>
-          <p class="text-gray-300 mt-2 text-sm">3D, animated, responsive website made with HTML, Tailwind & JS.</p>
+          <p class="text-gray-300 mt-2 text-mid">3D, animated, responsive website made with HTML, Tailwind & JS.</p>
           <a href="https://github.com/Rahmatul-Rovi/Tax_Management" class="text-blue-400 hover:underline mt-3 inline-block">View on GitHub</a>
         </div>
       </div>
@@ -143,6 +159,22 @@
 
   <footer class="text-center py-6 bg-slate-800 text-gray-400">
   © 2025 Rahmatul Munim Rovi | Designed & Developed with Tailwind CSS
+  <!-- Back to Top Button -->
+<button id="backToTop" class="hidden fixed bottom-6 right-6 bg-blue-500 text-white text-2xl p-3 rounded-full shadow-lg hover:bg-blue-600 transition">
+  ↑
+</button>
+
+<script>
+  const backToTop = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) backToTop.classList.remove("hidden");
+    else backToTop.classList.add("hidden");
+  });
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
   </footer>
 
   <script>
@@ -172,6 +204,137 @@
       if (toggle.textContent === "🌙") toggle.textContent = "☀️";
       else toggle.textContent = "🌙";
     });
+
   </script>
+  <!-- Scroll Progress Bar -->
+<div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-yellow-400 z-[9999] w-0 transition-all duration-200"></div>
+
+<script>
+  // Scroll Progress Bar
+  window.addEventListener("scroll", () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercent = (scrollTop / height) * 100;
+    document.getElementById("scroll-progress").style.width = scrollPercent + "%";
+  });
+</script>
+
+
+<script>
+  const text = "A passionate Frontend Developer crafting immersive, interactive, and visually stunning web experiences.";
+  const typeEl = document.getElementById("typewriter");
+  let i = 0;
+
+  function typeWriter() {
+    if (i < text.length) {
+      typeEl.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 20); 
+    }
+  }
+
+  window.addEventListener("load", typeWriter);
+</script>
+
+<canvas id="particleCanvas" class="fixed inset-0 -z-10"></canvas>
+
+<script>
+const canvas = document.getElementById("particleCanvas");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+let mouseX = 0;
+let mouseY = 0;
+
+// Resize canvas
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resize);
+resize();
+
+// Track mouse movement
+window.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+// Create particles
+const particleCount = 120;
+for (let i = 0; i < particleCount; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    z: Math.random() * 500 - 250, // 3D depth
+    r: Math.random() * 2 + 1.5,
+    dx: (Math.random() - 0.5) * 0.4,
+    dy: (Math.random() - 0.5) * 0.4,
+    dz: (Math.random() - 0.5) * 0.4
+  });
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  const cx = canvas.width / 2;
+  const cy = canvas.height / 2;
+
+  particles.forEach((p, i) => {
+    // Perspective projection
+    const scale = 400 / (400 + p.z);
+    const x2d = cx + (p.x - cx) * scale + (mouseX - cx) * 0.03;
+    const y2d = cy + (p.y - cy) * scale + (mouseY - cy) * 0.03;
+
+    // Draw particle with neon glow
+    ctx.beginPath();
+    ctx.arc(x2d, y2d, p.r * scale, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(59, 130, 246, 1)";
+    ctx.shadowColor = "rgba(59, 130, 246, 0.8)";
+    ctx.shadowBlur = 12;
+    ctx.fill();
+
+    // Move particle
+    p.x += p.dx;
+    p.y += p.dy;
+    p.z += p.dz;
+
+    // Bounce edges
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    if (p.z < -250 || p.z > 250) p.dz *= -1;
+
+    // Connecting lines with neon glow
+    for (let j = i + 1; j < particles.length; j++) {
+      const p2 = particles[j];
+      const scale2 = 400 / (400 + p2.z);
+      const x2d2 = cx + (p2.x - cx) * scale2 + (mouseX - cx) * 0.03;
+      const y2d2 = cy + (p2.y - cy) * scale2 + (mouseY - cy) * 0.03;
+
+      const dx = x2d - x2d2;
+      const dy = y2d - y2d2;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+
+      if(dist < 150){
+        ctx.beginPath();
+        ctx.moveTo(x2d, y2d);
+        ctx.lineTo(x2d2, y2d2);
+        ctx.strokeStyle = `rgba(59, 130, 246, ${0.5 * (1 - dist / 150)})`;
+        ctx.lineWidth = 1.2;
+        ctx.shadowColor = "rgba(59, 130, 246, 0.5)";
+        ctx.shadowBlur = 6;
+        ctx.stroke();
+      }
+    }
+  });
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+
+
 </body>
 </html>
