@@ -27,35 +27,46 @@
 
   <!-- Header -->
   <header class="fixed top-0 w-full z-50 bg-gradient-to-r from-blue-600 via-indigo-700 to-purple-700 shadow-lg backdrop-blur-md">
-    <nav class="flex items-center justify-between px-8 py-4">
-      <h1 class="text-2xl font-bold text-white tracking-wide hover:scale-105 transition-transform duration-300">
+   <nav class="flex items-center justify-between px-8 py-4">
+    <h1 class="text-2xl font-bold text-white tracking-wide hover:scale-105 transition-transform duration-300">
         Rahmatul-Rovi<span class="text-yellow-400">.</span>
-      </h1>
-      <ul class="hidden md:flex space-x-8 font-medium">
+    </h1>
+    
+    <ul id="nav-links" class="hidden md:flex space-x-8 font-medium">
         <li><a href="#about" class="hover:text-yellow-400">About</a></li>
         <li><a href="#skills" class="hover:text-yellow-400">Skills</a></li>
         <li><a href="#projects" class="hover:text-yellow-400">Projects</a></li>
         <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
-      </ul>
-      <button id="theme-toggle" class="text-2xl hover:scale-110 transition">🌙</button>
-    </nav>
+    </ul>
+
+    <button id="menu-toggle" class="text-2xl md:hidden hover:scale-110 transition z-50">
+        &#9776; </button>
+
+    <button id="theme-toggle" class="text-2xl hover:scale-110 transition">🌙</button>
+</nav>
   </header>
 
   <!-- Hero -->
   <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-28 animated-bg">
 
-  <div class="transform transition-transform duration-700 hover:rotate-x-6 hover:rotate-y-6 hover:scale-105 bg-slate-900/60 backdrop-blur-md p-10 rounded-2xl shadow-2xl border border-slate-700">
-    <h2 class="text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-      Hello, I’m <span class="text-yellow-400">Rahmatul</span>
-    </h2>
-    <p class="text-xl text-gray-300 max-w-2xl">
-      A passionate <span class="text-blue-400 font-semibold">Frontend Developer</span> crafting immersive, interactive, and visually stunning web experiences.
-    </p>
-    <div class="mt-8 space-x-4">
-      <a href="#projects" class="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition transform hover:-translate-y-1 hover:shadow-lg">View Projects</a>
-      <a href="#contact" class="px-6 py-3 border border-blue-400 text-blue-400 rounded-full hover:bg-blue-400 hover:text-slate-900 transition transform hover:-translate-y-1 hover:shadow-lg">Contact</a>
+   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center justify-center">
+    <div class="transform transition-transform duration-700 hover:rotate-x-6 hover:rotate-y-6 hover:scale-105 bg-slate-900/60 backdrop-blur-md p-10 rounded-2xl shadow-2xl border border-slate-700 text-center md:text-left">
+        <h2 class="text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+            Hello, I’m <span class="text-yellow-400">Rahmatul</span>
+        </h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto md:mx-0">
+            A passionate <span class="text-blue-400 font-semibold">Frontend Developer</span> crafting immersive, interactive, and visually stunning web experiences.
+        </p>
+        <div class="mt-8 flex flex-col items-center space-y-4 md:flex-row md:space-y-0 md:space-x-4 md:justify-start">
+            <a href="#projects" class="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition transform hover:-translate-y-1 hover:shadow-lg">View Projects</a>
+            <a href="#contact" class="px-6 py-3 border border-blue-400 text-blue-400 rounded-full hover:bg-blue-400 hover:text-slate-900 transition transform hover:-translate-y-1 hover:shadow-lg">Contact</a>
+        </div>
     </div>
-  </div>
+
+    <div class="flex justify-center items-center mt-12 md:mt-0">
+        <img src="pic5.png" alt="Rahmatul Rovi" class="rounded-xl shadow-2xl w-[22rem] h-[22rem] object-cover transform transition-transform duration-700 hover:scale-105" data-tilt data-tilt-max="15">
+    </div>
+</div>
 </section>
 
   <!-- About -->
@@ -112,7 +123,7 @@
         </div>
       </div>
        <div class="bg-slate-700 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition" data-tilt data-tilt-max="10">
-        <img src="pic.png" alt="" class="w-full h-48 object-cover" />
+        <img src="img4.jpg" alt="" class="w-full h-48 object-cover" />
         <div class="p-5 text-left">
           <h3 class="text-xl font-semibold text-yellow-400">Portfolio Website</h3>
           <p class="text-gray-300 mt-2 text-mid">3D, animated, responsive website made with HTML, Tailwind & JS.</p>
