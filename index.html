@@ -239,99 +239,110 @@
 <canvas id="particleCanvas" class="fixed inset-0 -z-10"></canvas>
 
 <script>
+// প্রথমে ক্যানভাস এলিমেন্টটি ধরুন
 const canvas = document.getElementById("particleCanvas");
-const ctx = canvas.getContext("2d");
 
-let particles = [];
-let mouseX = 0;
-let mouseY = 0;
+// যদি স্ক্রিনের প্রস্থ 768px (মোবাইল) এর কম হয়
+if (window.innerWidth < 768) {
+    // ক্যানভাস এলিমেন্টটি HTML থেকে সরিয়ে দিন
+    canvas.remove(); 
+} else {
+    // শুধুমাত্র ডেস্কটপ বা বড় স্ক্রিনের জন্য এই পুরো কোডটি রান হবে
+    
+    // কনটেক্সট সেটআপ
+    const ctx = canvas.getContext("2d");
 
-// Resize canvas
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-window.addEventListener("resize", resize);
-resize();
+    let particles = [];
+    let mouseX = 0;
+    let mouseY = 0;
 
-// Track mouse movement
-window.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
-
-// Create particles
-const particleCount = 120;
-for (let i = 0; i < particleCount; i++) {
-  particles.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    z: Math.random() * 500 - 250, // 3D depth
-    r: Math.random() * 2 + 1.5,
-    dx: (Math.random() - 0.5) * 0.4,
-    dy: (Math.random() - 0.5) * 0.4,
-    dz: (Math.random() - 0.5) * 0.4
-  });
-}
-
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  const cx = canvas.width / 2;
-  const cy = canvas.height / 2;
-
-  particles.forEach((p, i) => {
-    // Perspective projection
-    const scale = 400 / (400 + p.z);
-    const x2d = cx + (p.x - cx) * scale + (mouseX - cx) * 0.03;
-    const y2d = cy + (p.y - cy) * scale + (mouseY - cy) * 0.03;
-
-    // Draw particle with neon glow
-    ctx.beginPath();
-    ctx.arc(x2d, y2d, p.r * scale, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(59, 130, 246, 1)";
-    ctx.shadowColor = "rgba(59, 130, 246, 0.8)";
-    ctx.shadowBlur = 12;
-    ctx.fill();
-
-    // Move particle
-    p.x += p.dx;
-    p.y += p.dy;
-    p.z += p.dz;
-
-    // Bounce edges
-    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-    if (p.z < -250 || p.z > 250) p.dz *= -1;
-
-    // Connecting lines with neon glow
-    for (let j = i + 1; j < particles.length; j++) {
-      const p2 = particles[j];
-      const scale2 = 400 / (400 + p2.z);
-      const x2d2 = cx + (p2.x - cx) * scale2 + (mouseX - cx) * 0.03;
-      const y2d2 = cy + (p2.y - cy) * scale2 + (mouseY - cy) * 0.03;
-
-      const dx = x2d - x2d2;
-      const dy = y2d - y2d2;
-      const dist = Math.sqrt(dx*dx + dy*dy);
-
-      if(dist < 150){
-        ctx.beginPath();
-        ctx.moveTo(x2d, y2d);
-        ctx.lineTo(x2d2, y2d2);
-        ctx.strokeStyle = `rgba(59, 130, 246, ${0.5 * (1 - dist / 150)})`;
-        ctx.lineWidth = 1.2;
-        ctx.shadowColor = "rgba(59, 130, 246, 0.5)";
-        ctx.shadowBlur = 6;
-        ctx.stroke();
-      }
+    // Resize canvas
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
     }
-  });
+    window.addEventListener("resize", resize);
+    resize();
 
-  requestAnimationFrame(animate);
+    // Track mouse movement
+    window.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    // Create particles
+    const particleCount = 120;
+    for (let i = 0; i < particleCount; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            z: Math.random() * 500 - 250, // 3D depth
+            r: Math.random() * 2 + 1.5,
+            dx: (Math.random() - 0.5) * 0.4,
+            dy: (Math.random() - 0.5) * 0.4,
+            dz: (Math.random() - 0.5) * 0.4
+        });
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        const cx = canvas.width / 2;
+        const cy = canvas.height / 2;
+
+        particles.forEach((p, i) => {
+            // Perspective projection
+            const scale = 400 / (400 + p.z);
+            const x2d = cx + (p.x - cx) * scale + (mouseX - cx) * 0.03;
+            const y2d = cy + (p.y - cy) * scale + (mouseY - cy) * 0.03;
+
+            // Draw particle with neon glow (and all drawing logic)
+            ctx.beginPath();
+            ctx.arc(x2d, y2d, p.r * scale, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(59, 130, 246, 1)";
+            ctx.shadowColor = "rgba(59, 130, 246, 0.8)";
+            ctx.shadowBlur = 12;
+            ctx.fill();
+
+            // Move particle
+            p.x += p.dx;
+            p.y += p.dy;
+            p.z += p.dz;
+
+            // Bounce edges
+            if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+            if (p.z < -250 || p.z > 250) p.dz *= -1;
+
+            // Connecting lines with neon glow
+            for (let j = i + 1; j < particles.length; j++) {
+                const p2 = particles[j];
+                const scale2 = 400 / (400 + p2.z);
+                const x2d2 = cx + (p2.x - cx) * scale2 + (mouseX - cx) * 0.03;
+                const y2d2 = cy + (p2.y - cy) * scale2 + (mouseY - cy) * 0.03;
+
+                const dx = x2d - x2d2;
+                const dy = y2d - y2d2;
+                const dist = Math.sqrt(dx*dx + dy*dy);
+
+                if(dist < 150){
+                    ctx.beginPath();
+                    ctx.moveTo(x2d, y2d);
+                    ctx.lineTo(x2d2, y2d2);
+                    ctx.strokeStyle = `rgba(59, 130, 246, ${0.5 * (1 - dist / 150)})`;
+                    ctx.lineWidth = 1.2;
+                    ctx.shadowColor = "rgba(59, 130, 246, 0.5)";
+                    ctx.shadowBlur = 6;
+                    ctx.stroke();
+                }
+            }
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
 }
-
-animate();
 </script>
 
 <script src="script.js"></script>
